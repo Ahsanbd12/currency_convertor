@@ -9,7 +9,7 @@ class Apilayer::Client
 
   def auth_headers
     {
-      "apikey": "test"
+      "apikey": Rails.application.credentials.api_layer_key
     }
   end
 
