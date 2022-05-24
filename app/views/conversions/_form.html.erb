@@ -1,0 +1,7 @@
+<%= simple_form_for @conversion do |f| %>
+  <%= f.input :amount, required: true %>
+  <%= f.input :from_currency, collection: Conversion.from_currencies.keys.map {|v| [v, v]}, include_blank: false  %>
+  <%= f.input :to_currency, collection: Conversion.to_currencies.keys.map {|v| [v, v]}, include_blank: false %>
+  <br/>
+  <%= f.button :submit, 'Convert', class: "btn btn-dark" %>
+<% end %>
